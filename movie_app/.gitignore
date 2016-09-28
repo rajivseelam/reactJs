@@ -1,0 +1,10 @@
+.buckconfig
+.flowconfig
+.watchmanconfig
+
+
+target
+target/*.js
+logs
+build
+node_modules

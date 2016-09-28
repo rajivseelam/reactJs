@@ -1,0 +1,43 @@
+{
+  "name": "movie_app",
+  "version": "1.0.0",
+  "description": "Simple movie and tv shows application using ReactJs and Redux",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --debug",
+    "start": "webpack-dev-server --progress --profile --colors --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venkateshvangala/reactJs.git"
+  },
+  "keywords": [
+    "react",
+    "Reactjs",
+    "redux"
+  ],
+  "author": "Venkatesh Kumar V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venkateshvangala/reactJs/issues"
+  },
+  "homepage": "https://github.com/venkateshvangala/reactJs#readme",
+  "dependencies": {
+    "babel-plugin-syntax-decorators": "^6.13.0",
+    "html-webpack-plugin": "^2.22.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "webpack": "^1.13.2"
+  }
+}

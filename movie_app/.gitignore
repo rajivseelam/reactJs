@@ -1,7 +1,7 @@
 .buckconfig
 .flowconfig
 .watchmanconfig
-
+npm-debug.log
 
 target
 target/*.js

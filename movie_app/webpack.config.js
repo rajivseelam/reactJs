@@ -4,19 +4,24 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 
-const sassLoaders = [
-  'css-loader',
-  'sass-loader?indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
-]
-
 module.exports = {
-    entry: './src/app.js',
+    entry: [
+      'font-awesome-webpack',
+      'bootstrap-loader',
+      './src/app.js'
+    ],
     output: {
       path: __dirname,
       filename: 'target/bundle.js'
     },
     module: {
       loaders: [
+        { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' },
+        { test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },
+        { test: /\.(ttf|eot)$/, loader: 'file' },
+        //Font-awesome
+        { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+        { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
         {
           test: /\.js$/,
           exclude: /node_modules/,
@@ -50,7 +55,10 @@ module.exports = {
   		new HtmlWebpackPlugin({
   			template: './index.html'
   		}),
-      new ExtractTextPlugin('public/styles.css')
+      new webpack.ProvidePlugin({
+        jQuery: "jquery"
+      }),
+      new ExtractTextPlugin('assets/styles.css')
   	],
     resolve: {
       extensions: ['', '.js', '.scss'],

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux'
+import '../../stylesheets/users/users'
 
 import { fetchUsers } from '../../actions/userActions'
 @connect((store) => {
@@ -20,7 +21,7 @@ export default class UserPage extends Component {
           mappedUser = this.props.user.map(data => <li key={data.id}> { data.id } </li>)
        }
        return(
-          <div className='app'>
+          <div className='container-users'>
                 <h1> Welcome To UserPage  - </h1>
                 <ul>{mappedUser}</ul>
           </div>

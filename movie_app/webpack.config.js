@@ -1,6 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+
+const sassLoaders = [
+  'css-loader',
+  'sass-loader?indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
+]
 
 module.exports = {
     entry: './src/app.js',
@@ -18,6 +25,10 @@ module.exports = {
               presets: ['es2015', 'react', 'stage-2'],
               plugins: ['transform-decorators-legacy']
           }
+        },
+        {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
         }
       ]
     },
@@ -38,6 +49,11 @@ module.exports = {
   		new webpack.HotModuleReplacementPlugin(),
   		new HtmlWebpackPlugin({
   			template: './index.html'
-  		})
-  	]
+  		}),
+      new ExtractTextPlugin('public/styles.css')
+  	],
+    resolve: {
+      extensions: ['', '.js', '.scss'],
+      root: [path.join(__dirname, './src')]
+    }
 };

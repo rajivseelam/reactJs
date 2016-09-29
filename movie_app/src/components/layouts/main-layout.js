@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
+import '../../stylesheets/common/footer'
+
+
 export default class MainLayout extends Component {
     render(){
         return(
-            <div className='app'>
+            <div className='container'>
               <header className="primary-header"></header>
               <aside className="primary-aside">
                 <ul>

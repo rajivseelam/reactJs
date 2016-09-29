@@ -7,7 +7,7 @@ export default class MainLayout extends Component {
         return(
             <div className='main-container'>
                 <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <div className="container">
+                    <div className="container nav-container">
                        <div className="navbar-header">
                           <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                               <span className="sr-only">Toggle navigation</span>
@@ -20,27 +20,17 @@ export default class MainLayout extends Component {
                           </a>
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                          <ul className="nav navbar-nav">
-                              <li>
-                                  <a href="#">About</a>
-                              </li>
-                              <li>
-                                  <a href="#">Services</a>
-                              </li>
-                              <li>
-                                  <a href="#">Contact</a>
-                              </li>
-                          </ul>
+                          <form className="navbar-form navbar-right">
+                            <input type="text" className="form-control" placeholder="Search for movies/tv shows..." />
+                          </form>
                       </div>
                    </div>
                 </nav>
                 <div className="main-container">
-                  <div>
-                      <div className="col-lg-12">
-                          <h1>Logo Nav by Start Bootstrap</h1>
-                          <p>Note: You may need to adjust some CSS based on the size of your logo. The default logo size is  pixels.</p>
-                      </div>
-                  </div>
+                    <div className="col-lg-12">
+                        <h1>Logo Nav by Start Bootstrap</h1>
+                        <p>Note: You may need to adjust some CSS based on the size of your logo. The default logo size is  pixels.</p>
+                    </div>
                 </div>
             </div>
         )

@@ -37,6 +37,7 @@ export default class Header extends Component{
                         <h5 className="list-group-item-heading">{item.name ? item.name : item.title }</h5>
                         <p className="list-group-item-text">{item.original_title ? item.original_title + ',' : '' } {item.release_date ? item.release_date: ''} </p>
                         <p className="list-group-item-text">{item.vote_average ? item.vote_average + '%': '0%'}</p>
+                        <p className="list-group-item-text">{item.overview ? item.overview.substr(0, 100) + '...' : ''}</p>
                     </div>
                 </div>
              </a>

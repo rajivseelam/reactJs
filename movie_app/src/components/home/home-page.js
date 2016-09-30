@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import '../../stylesheets/home/home'
 import { fetchNowPlayingMovies, clearNowPlayingMovies } from '../../actions/movies/movieActions'
 import { fetchNowPlayingTvShows, clearNowPlayingTvShows } from '../../actions/tv/tvActions'
+import { fetchUsers, clearUsersList } from '../../actions/users/userActions'
 
 @connect( (store) => {
     return{
@@ -12,7 +13,10 @@ import { fetchNowPlayingTvShows, clearNowPlayingTvShows } from '../../actions/tv
       moviesCount: store.movieReducer.moviesCount,
       nowPlayingTvShows: store.tvReducer.nowPlayingtvShows,
       tvShowsFetched: store.tvReducer.fetched,
-      tvShowsCount: store.tvReducer.tvShowsCount
+      tvShowsCount: store.tvReducer.tvShowsCount,
+      usersCount: store.userReducer.usersCount,
+      userList: store.userReducer.userList,
+      peopleFetched: store.userReducer.fetched
     }
 })
 export default class HomePage extends Component {
@@ -21,6 +25,8 @@ export default class HomePage extends Component {
         this.props.dispatch(fetchNowPlayingMovies())
         this.props.dispatch(clearNowPlayingTvShows())
         this.props.dispatch(fetchNowPlayingTvShows())
+        this.props.dispatch(clearUsersList())
+        this.props.dispatch(fetchUsers())
     }
 
     render(){
@@ -32,7 +38,7 @@ export default class HomePage extends Component {
                   }
                   return <a href="#" key={index} className={ (!index ? 'active' : '') }>
                       <div className="movie_tile col-xs-6 col-sm-3 placeholder">
-                          <img src={"https://image.tmdb.org/t/p/w250_and_h141_bestv2/" + (movie.backdrop_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
+                          <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (movie.backdrop_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
                           <div className="row">
                             <h4>{movie.title ? movie.title.substr(0, 25): ''}</h4>
                             <span className="pull-left text-muted"> {movie.popularity ? movie.popularity: ''} </span>
@@ -52,7 +58,7 @@ export default class HomePage extends Component {
                   }
                   return <a href="#" key={index} className={ (!index ? 'active' : '') }>
                       <div className="movie_tile col-xs-6 col-sm-3 placeholder">
-                          <img src={"https://image.tmdb.org/t/p/w250_and_h141_bestv2/" + (tvShow.backdrop_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
+                          <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (tvShow.backdrop_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
                           <div className="row">
                             <h4>{tvShow.name ? tvShow.name.substr(0, 25): ''}</h4>
                             <span className="pull-left text-muted"> {tvShow.popularity ? tvShow.popularity: ''} </span>
@@ -63,6 +69,27 @@ export default class HomePage extends Component {
                   </a>
             });
         }
+
+        var usersListElement = [];
+        if(this.props.userList.length > 0){
+            usersListElement = this.props.userList.map( (user, index) => {
+                  if(index >= 8){
+                    return false
+                  }
+                  return <a href="#" key={index} className={ (!index ? 'active' : '') }>
+                      <div className="movie_tile col-xs-6 col-sm-3 placeholder">
+                          <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (user.profile_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
+                          <div className="row">
+                            <h4>{user.name ? user.name.substr(0, 25): ''}</h4>
+                            <span className="pull-left text-muted"> {user.popularity ? user.popularity: ''} </span>
+                            <span className="pull-right text-muted"> {user.known_for[0].vote_average ? user.known_for[0].vote_average + "%": '0%' } </span>
+                          </div>
+
+                      </div>
+                  </a>
+            });
+        }
+
 
         return(
             <div className='container-home'>
@@ -83,7 +110,7 @@ export default class HomePage extends Component {
                     <div className="over-all-count col-xs-6 col-sm-3 placeholder">
                         <div className="row">
                           <h4>Total No.of Popular Users</h4>
-                          <h4 className="text-muted"> 60 </h4>
+                          <h4 className="text-muted"> {this.props.usersCount} </h4>
                          </div>
                     </div>
                 </div>
@@ -98,6 +125,11 @@ export default class HomePage extends Component {
                 <div className={"row placeholders" +  (this.props.tvShowsFetched ? '': 'inactive')}>
                      {tvShowsListElement}
                 </div>
+                <h2 className="page-header">Popular People</h2>
+                <div className={"row placeholders" +  (this.props.peopleFetched ? '': 'inactive')}>
+                     {usersListElement}
+                </div>
+
             </div>
         )
     }

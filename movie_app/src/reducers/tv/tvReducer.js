@@ -1,37 +1,37 @@
 export default function reducer(state={
-    moviesCount: 0,
-    nowPlayingMovies: [],
+    tvShowsCount: 0,
+    nowPlayingtvShows: [],
     fetching: false,
     fetched: false,
     error: false
 }, action) {
     switch (action.type) {
-      case "CLEAR_NOW_PLAYING_MOVIES": {
+      case "CLEAR_NOW_PLAYING_TV_SHOWS": {
           return {
               ...state,
-              nowPlayingMovies: [],
+              nowPlayingtvShows: [],
               fetched: false,
               fetching: true
           }
           break;
       }
-      case "FETCH_NOW_PLAYING_MOVIES_REJECTED": {
+      case "FETCH_NOW_PLAYING_TV_SHOWS_REJECTED": {
           return {
               ...state,
               fetching: false,
               fetched: false,
-              nowPlayingMovies: [],
+              nowPlayingtvShows: [],
               error: action.payload
           }
           break;
       }
-      case "FETCH_NOW_PLAYING_MOVIES_FULFILLED": {
+      case "FETCH_NOW_PLAYING_TV_SHOWS_FULFILLED": {
           return {
               ...state,
               fetching: false,
               fetched: true,
-              moviesCount: action.payload.count,
-              nowPlayingMovies: action.payload.results
+              tvShowsCount: action.payload.count,
+              nowPlayingtvShows: action.payload.results
           }
           break;
       }

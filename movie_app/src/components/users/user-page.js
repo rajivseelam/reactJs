@@ -6,7 +6,7 @@ import '../../stylesheets/users/users'
 import { fetchUsers } from '../../actions/userActions'
 @connect((store) => {
     return {
-      user: store.user.user
+      user: store.userReducer.user
     }
 })
 export default class UserPage extends Component {

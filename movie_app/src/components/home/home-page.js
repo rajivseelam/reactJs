@@ -5,6 +5,7 @@ import '../../stylesheets/home/home'
 import { fetchNowPlayingMovies, clearNowPlayingMovies } from '../../actions/movies/movieActions'
 import { fetchNowPlayingTvShows, clearNowPlayingTvShows } from '../../actions/tv/tvActions'
 import { fetchUsers, clearUsersList } from '../../actions/users/userActions'
+import ItemListContainer  from '../utils/item-list-container'
 
 @connect( (store) => {
     return{
@@ -32,64 +33,32 @@ export default class HomePage extends Component {
     render(){
         var movieListElement = [];
         if(this.props.nowPlayingMovies.length > 0){
-            movieListElement = this.props.nowPlayingMovies.map( (movie, index) => {
-                  if(index >= 8){
-                    return false
-                  }
-                  return <a href="#" key={index} className={ (!index ? 'active' : '') }>
-                      <div className="movie_tile col-xs-6 col-sm-3 placeholder">
-                          <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (movie.backdrop_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
-                          <div className="row">
-                            <h4>{movie.title ? movie.title.substr(0, 25): ''}</h4>
-                            <span className="pull-left text-muted"> {movie.popularity ? movie.popularity: ''} </span>
-                            <span className="pull-right text-muted"> {movie.vote_average ? movie.vote_average + "%": '0%' } </span>
-                          </div>
-
-                      </div>
-                  </a>
-            });
+            movieListElement = <ItemListContainer items={this.props.nowPlayingMovies} />
         }
-
         var tvShowsListElement = [];
         if(this.props.nowPlayingTvShows.length > 0){
-            tvShowsListElement = this.props.nowPlayingTvShows.map( (tvShow, index) => {
-                  if(index >= 8){
-                    return false
-                  }
-                  return <a href="#" key={index} className={ (!index ? 'active' : '') }>
-                      <div className="movie_tile col-xs-6 col-sm-3 placeholder">
-                          <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (tvShow.backdrop_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
-                          <div className="row">
-                            <h4>{tvShow.name ? tvShow.name.substr(0, 25): ''}</h4>
-                            <span className="pull-left text-muted"> {tvShow.popularity ? tvShow.popularity: ''} </span>
-                            <span className="pull-right text-muted"> {tvShow.vote_average ? tvShow.vote_average + "%": '0%' } </span>
-                          </div>
-
-                      </div>
-                  </a>
-            });
+            tvShowsListElement = <ItemListContainer items={this.props.nowPlayingTvShows} />
         }
 
         var usersListElement = [];
         if(this.props.userList.length > 0){
-            usersListElement = this.props.userList.map( (user, index) => {
-                  if(index >= 8){
-                    return false
-                  }
-                  return <a href="#" key={index} className={ (!index ? 'active' : '') }>
-                      <div className="movie_tile col-xs-6 col-sm-3 placeholder">
-                          <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (user.profile_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
-                          <div className="row">
-                            <h4>{user.name ? user.name.substr(0, 25): ''}</h4>
-                            <span className="pull-left text-muted"> {user.popularity ? user.popularity: ''} </span>
-                            <span className="pull-right text-muted"> {user.known_for[0].vote_average ? user.known_for[0].vote_average + "%": '0%' } </span>
-                          </div>
+          usersListElement = this.props.userList.map( (user, index) => {
+                if(index >= 8){
+                  return false
+                }
+                return <a href="#" key={index} className={ (!index ? 'active' : '') }>
+                    <div className="movie_tile col-xs-6 col-sm-3 placeholder">
+                        <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (user.profile_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
+                        <div className="row">
+                          <h4>{user.name ? user.name.substr(0, 25): ''}</h4>
+                          <span className="pull-left text-muted"> {user.popularity ? user.popularity: ''} </span>
+                          <span className="pull-right text-muted"> {user.known_for[0].vote_average ? user.known_for[0].vote_average + "%": '0%' } </span>
+                        </div>
 
-                      </div>
-                  </a>
-            });
+                    </div>
+                </a>
+          });
         }
-
 
         return(
             <div className='container-home'>

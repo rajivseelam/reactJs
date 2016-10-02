@@ -1,5 +1,5 @@
 import axios from 'axios'
-import * as movieActions from 'actions/movies/movieActions'
+import * as NowPlayingActions from 'actions/movies/now-playing-actions'
 
 export function fetchNowPlayingMovies() {
     return function(dispatch){

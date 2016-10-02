@@ -1,42 +1,37 @@
 export default function reducer(state={
-    moviesCount: 0,
-    nowPlayingMovies: [],
-    dates: {
-      "maximum": null,
-      "minimum": null
-    },
+    userList: [],
+    usersCount: 0,
     fetching: false,
     fetched: false,
     error: false
 }, action) {
     switch (action.type) {
-      case "CLEAR_NOW_PLAYING_MOVIES": {
+      case "CLEAR_USER_LIST": {
           return {
               ...state,
-              nowPlayingMovies: [],
+              userList: [],
               fetched: false,
               fetching: true
           }
           break;
       }
-      case "FETCH_NOW_PLAYING_MOVIES_REJECTED": {
+      case "FETCH_USER_REJECTED": {
           return {
               ...state,
-              fetching: false,
+              userList: [],
               fetched: false,
-              nowPlayingMovies: [],
+              fetching: false,
               error: action.payload
           }
           break;
       }
-      case "FETCH_NOW_PLAYING_MOVIES_FULFILLED": {
+      case "FETCH_USER_FULFILLED": {
           return {
               ...state,
               fetching: false,
               fetched: true,
-              dates: action.payload.dates,
-              moviesCount: action.payload.count,
-              nowPlayingMovies: action.payload.results
+              usersCount: action.payload.count,
+              userList: action.payload.results
           }
           break;
       }

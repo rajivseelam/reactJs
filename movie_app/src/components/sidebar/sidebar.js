@@ -9,22 +9,23 @@ export default class Sidebar extends Component{
                 <ul className="nav nav-sidebar">
                     <li><Link to="/" activeClassName="active">Dashboard</Link></li>
                     <br/>
-                    <li><Link to="/widgets" activeClassName="active">Movies</Link></li>
+                    <li className="no-link">Movies</li>
                     <img src={require('../../images/green_line.png')}/>
-                    <li><Link to="/" activeClassName="active">Coming Soon.!!</Link></li>
-                    <li><Link to="/" activeClassName="active">Most Popular</Link></li>
-                    <li><Link to="/" activeClassName="active">Top Rated</Link></li>
-                    <li><Link to="/" activeClassName="active">Lowest Rated</Link></li>
+                    <li><Link to="/now-playing" activeClassName="active">Now Playing</Link></li>
+                    <li><Link to="/widgets" activeClassName="active">Coming Soon.!!</Link></li>
+                    <li><Link to="/widgets" activeClassName="active">Most Popular</Link></li>
+                    <li><Link to="/widgets" activeClassName="active">Top Rated</Link></li>
                     <br/>
-                    <li><Link to="/" activeClassName="active">TV</Link></li>
+                    <li className="no-link">TV</li>
                     <img src={require('../../images/blue_line.png')}/>
-                    <li><Link to="/" activeClassName="active">Most Popular</Link></li>
-                    <li><Link to="/" activeClassName="active">Top Rated</Link></li>
+                    <li><Link to="/tv-shows-on-tv" activeClassName="active">On TV</Link></li>
+                    <li><Link to="/widgets" activeClassName="active">Most Popular</Link></li>
+                    <li><Link to="/widgets" activeClassName="active">Top Rated</Link></li>
                     <br/>
-                    <li><Link to="/" activeClassName="active">Celebs</Link></li>
+                    <li className="no-link">Celebs</li>
                     <img src={require('../../images/orange_line.png')}/>
-                    <li><Link to="/" activeClassName="active">Most Popular</Link></li>
-                    <li><Link to="/" activeClassName="active">Born Today</Link></li>
+                    <li><Link to="/most-popular-celebs" activeClassName="active">Most Popular</Link></li>
+                    <li><Link to="/widgets" activeClassName="active">Born Today</Link></li>
                 </ul>
             </div>
         )

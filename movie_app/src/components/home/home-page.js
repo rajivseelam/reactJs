@@ -33,11 +33,11 @@ export default class HomePage extends Component {
     render(){
         var movieListElement = [];
         if(this.props.nowPlayingMovies.length > 0){
-            movieListElement = <ItemListContainer items={this.props.nowPlayingMovies} />
+            movieListElement = <ItemListContainer mediaType='movie' items={this.props.nowPlayingMovies} />
         }
         var tvShowsListElement = [];
         if(this.props.nowPlayingTvShows.length > 0){
-            tvShowsListElement = <ItemListContainer items={this.props.nowPlayingTvShows} />
+            tvShowsListElement = <ItemListContainer mediaType="tv" items={this.props.nowPlayingTvShows} />
         }
 
         var usersListElement = [];

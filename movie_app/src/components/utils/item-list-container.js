@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import render from 'react-dom';
+import { Link } from 'react-router'
 
 export default class ItemListContainer extends Component {
     render(){
@@ -9,7 +10,7 @@ export default class ItemListContainer extends Component {
                 if(index >= 8 && !this.props.displayLength){
                   return false
                 }
-                return <a href="#" key={index} className={ (!index ? 'active' : '') }>
+                return <Link to={ this.props.mediaType && this.props.mediaType == 'movie' ? '/now-playing/' + item.id : (this.props.mediaType ? '/' + item.id: 'javascript:void(0)')} data-id={item.id} key={item.id} className={ (!index ? 'active' : '') }>
                     <div className="movie_tile col-xs-6 col-sm-3 placeholder">
                         <img src={(item.poster_path ? "https://image.tmdb.org/t/p/w235_and_h235_bestv2" + item.poster_path: (item.backdrop_path? "https://image.tmdb.org/t/p/w235_and_h235_bestv2" + item.backdrop_path : require('../../images/no-poster.png')) )} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
                         <div className="row">
@@ -22,7 +23,7 @@ export default class ItemListContainer extends Component {
                         </div>
 
                     </div>
-                </a>
+                </Link>
           });
           return(
             <div>{itemListElement}</div>

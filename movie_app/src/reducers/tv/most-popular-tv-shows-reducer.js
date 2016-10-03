@@ -1,37 +1,37 @@
 export default function reducer(state={
-    userList: [],
-    usersCount: 0,
+    tvShowsCount: 0,
+    mostPopularTvShows: [],
     fetching: false,
     fetched: false,
     error: false
 }, action) {
     switch (action.type) {
-      case "CLEAR_USER_LIST": {
+      case "CLEAR_MOST_POPULAR_TV_SHOWS": {
           return {
               ...state,
-              userList: [],
+              mostPopularTvShows: [],
               fetched: false,
               fetching: true
           }
           break;
       }
-      case "FETCH_USER_REJECTED": {
+      case "FETCH_MOST_POPULAR_TV_SHOWS_REJECTED": {
           return {
               ...state,
-              userList: [],
-              fetched: false,
               fetching: false,
+              fetched: false,
+              mostPopularTvShows: [],
               error: action.payload
           }
           break;
       }
-      case "FETCH_USER_FULFILLED": {
+      case "FETCH_MOST_POPULAR_TV_SHOWS_FULFILLED": {
           return {
               ...state,
               fetching: false,
               fetched: true,
-              usersCount: action.payload.count,
-              userList: action.payload.results
+              tvShowsCount: action.payload.count,
+              mostPopularTvShows: action.payload.results
           }
           break;
       }

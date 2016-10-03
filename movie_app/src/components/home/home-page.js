@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux'
 import '../../stylesheets/home/home'
-import { fetchNowPlayingMovies, clearNowPlayingMovies } from '../../actions/movies/movieActions'
-import { fetchNowPlayingTvShows, clearNowPlayingTvShows } from '../../actions/tv/tvActions'
-import { fetchUsers, clearUsersList } from '../../actions/users/userActions'
+import { fetchNowPlayingMovies, clearNowPlayingMovies } from '../../actions/movies/now-playing-actions'
+import { fetchNowPlayingTvShows, clearNowPlayingTvShows } from '../../actions/tv/tv-shows-on-tv-actions'
+import { fetchMostPopularCelebs, clearMostPopularCelebs } from '../../actions/celebs/most-popular-celeb-actions'
 import ItemListContainer  from '../utils/item-list-container'
 
 @connect( (store) => {
     return{
-      nowPlayingMovies: store.movieReducer.nowPlayingMovies,
-      moviesFetched: store.movieReducer.fetched,
-      moviesCount: store.movieReducer.moviesCount,
-      nowPlayingTvShows: store.tvReducer.nowPlayingtvShows,
-      tvShowsFetched: store.tvReducer.fetched,
-      tvShowsCount: store.tvReducer.tvShowsCount,
-      usersCount: store.userReducer.usersCount,
-      userList: store.userReducer.userList,
-      peopleFetched: store.userReducer.fetched
+      nowPlayingMovies: store.nowPlayingReducer.nowPlayingMovies,
+      moviesFetched: store.nowPlayingReducer.fetched,
+      moviesCount: store.nowPlayingReducer.moviesCount,
+      nowPlayingTvShows: store.tvShowsOnTvReducer.nowPlayingtvShows,
+      tvShowsFetched: store.tvShowsOnTvReducer.fetched,
+      tvShowsCount: store.tvShowsOnTvReducer.tvShowsCount,
+      usersCount: store.mostPopularCelebsReducer.usersCount,
+      userList: store.mostPopularCelebsReducer.userList,
+      peopleFetched: store.mostPopularCelebsReducer.fetched
     }
 })
 export default class HomePage extends Component {
@@ -26,8 +26,8 @@ export default class HomePage extends Component {
         this.props.dispatch(fetchNowPlayingMovies())
         this.props.dispatch(clearNowPlayingTvShows())
         this.props.dispatch(fetchNowPlayingTvShows())
-        this.props.dispatch(clearUsersList())
-        this.props.dispatch(fetchUsers())
+        this.props.dispatch(clearMostPopularCelebs())
+        this.props.dispatch(fetchMostPopularCelebs())
     }
 
     render(){

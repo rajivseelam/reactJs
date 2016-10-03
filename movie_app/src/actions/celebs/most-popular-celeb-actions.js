@@ -1,5 +1,5 @@
 import axios from 'axios'
-import * as mostPopularCelebActions from 'actions/users/userActions';
+import * as mostPopularCelebActions from 'actions/celebs/most-popular-celeb-actions';
 
 export function fetchMostPopularCelebs() {
     return function(dispatch){

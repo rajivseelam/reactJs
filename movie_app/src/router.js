@@ -18,16 +18,14 @@ import MovieDetailedPage from './components/movie/movie-detailed-page'
 export default(
     <Router history={browserHistory}>
         <Route component={MainLayout}>
-            <Route path="/" component={HomePage} />
-
+            <Route path="home">
+              <IndexRoute component={HomePage} />
+              <Route path=":id" component={MovieDetailedPage}/>
+            </Route>
             <Route path="now-playing">
-                <Route component={DetailedPageLayout}>
-                 <IndexRoute component={NowPlaying} />
-               </Route>
+                <IndexRoute component={NowPlaying} />
                 <Route path=":id" component={MovieDetailedPage}/>
             </Route>
-
-
             <Route path="upcoming-movies">
                   <IndexRoute component={UpcomingMovies} />
             </Route>

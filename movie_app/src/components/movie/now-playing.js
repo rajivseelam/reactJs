@@ -21,7 +21,7 @@ export default class NowPlaying extends Component{
         var movieListElement = [];
         var minimum = '';
         if(this.props.nowPlayingMovies.length){
-            movieListElement = <ItemListContainer mediaType='movie' displayLength='all' items={this.props.nowPlayingMovies} />
+            movieListElement = <ItemListContainer urlPrefix='/now-playing/' mediaType='movie' displayLength='all' items={this.props.nowPlayingMovies} />
             minimum = this.props.dates.minimum
         }
         return(

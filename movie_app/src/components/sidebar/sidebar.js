@@ -7,7 +7,7 @@ export default class Sidebar extends Component{
         return(
             <div className="col-sm-3 col-md-2 sidebar">
                 <ul className="nav nav-sidebar">
-                    <li><Link to="/" activeClassName="active">Dashboard</Link></li>
+                    <li><Link to="/home" activeClassName="active">Dashboard</Link></li>
                     <br/>
                     <li className="no-link">Movies</li>
                     <img src={require('../../images/green_line.png')}/>

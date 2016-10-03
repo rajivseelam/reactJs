@@ -5,6 +5,7 @@ import tvReducer from './tv/tvReducer'
 import userReducer from './user/userReducer'
 import mostPopularCelebsReducer from './celebs/most-popular-celebs-reducer'
 import nowPlayingReducer from './movie/now-playing-reducer'
+import upcomingMoviesReducer from './movie/upcoming-movies-reducer'
 import tvShowsOnTvReducer from './tv/tv-shows-on-tv-reducer'
 
 export default combineReducers({
@@ -14,5 +15,6 @@ export default combineReducers({
   userReducer,
   nowPlayingReducer,
   tvShowsOnTvReducer,
-  mostPopularCelebsReducer
+  mostPopularCelebsReducer,
+  upcomingMoviesReducer
 })

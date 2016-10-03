@@ -17,6 +17,9 @@ export default class ItemListContainer extends Component {
                           <span className="pull-left text-muted"> {item.popularity ? item.popularity: ''} </span>
                           <span className="pull-right text-muted"> {item.vote_average ? item.vote_average + "%": '0%' } </span>
                         </div>
+                        <div className="row pull-right">
+                          <span>{item.release_date ? item.release_date: ''}</span> 
+                        </div>
 
                     </div>
                 </a>

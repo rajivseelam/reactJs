@@ -12,7 +12,7 @@ export default class Sidebar extends Component{
                     <li className="no-link">Movies</li>
                     <img src={require('../../images/green_line.png')}/>
                     <li><Link to="/now-playing" activeClassName="active">Now Playing</Link></li>
-                    <li><Link to="/widgets" activeClassName="active">Coming Soon.!!</Link></li>
+                    <li><Link to="/upcoming-movies" activeClassName="active">Coming Soon.!!</Link></li>
                     <li><Link to="/widgets" activeClassName="active">Most Popular</Link></li>
                     <li><Link to="/widgets" activeClassName="active">Top Rated</Link></li>
                     <br/>

@@ -47,4 +47,4 @@ Following concepts used
 
 <h3> Dashboard </h3>
 <p> Dashboard contains Top movies, TV shows and Popular Celebrities </p>
-<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/Dashboard.png" />
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/Dashboard_movies_tvshows_celbs.png" />

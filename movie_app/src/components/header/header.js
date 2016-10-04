@@ -54,7 +54,7 @@ export default class Header extends Component{
                           <span className="icon-bar"></span>
                           <span className="icon-bar"></span>
                       </button>
-                      <a className="navbar-brand" href="#">
+                      <a className="navbar-brand" href="/home">
                           <img src={require('../../images/logo.png')} alt="" />
                       </a>
                     </div>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-import DetailedPageLayout from './components/layouts/detailed-layout'
 import MainLayout from './components/layouts/main-layout'
 import HomePage from './components/home/home-page'
 import NowPlaying from './components/movie/now-playing'
@@ -15,6 +14,7 @@ import TopRatedTvShows from './components/tv/top-rated-tv-shows'
 import AiringTodayTvShows from './components/tv/airing-today-tv-shows'
 import MovieDetailedPage from './components/movie/movie-detailed-page'
 import TvShowDetailedPage from './components/tv/tv-show-detailed-page'
+import celebsDetailedPage from './components/celebs/celebs-detailed-page'
 
 export default(
     <Router history={browserHistory}>
@@ -23,11 +23,11 @@ export default(
               <IndexRoute component={HomePage} />
               <Route path="movie/:id" component={MovieDetailedPage}/>
               <Route path="tv/:id" component={TvShowDetailedPage}/>
+              <Route path="celebs/:id" component={celebsDetailedPage}/>
             </Route>
             <Route path="now-playing">
                 <IndexRoute component={NowPlaying} />
                 <Route path="movie/:id" component={MovieDetailedPage}/>
-                <Route path="tv/:id" component={TvShowDetailedPage}/>
             </Route>
             <Route path="upcoming-movies">
                   <IndexRoute component={UpcomingMovies} />

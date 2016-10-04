@@ -46,7 +46,7 @@ export default class HomePage extends Component {
                 if(index >= 8){
                   return false
                 }
-                return <a href="#" key={index} className={ (!index ? 'active' : '') }>
+                return <a href={"/home/celebs/" + user.id}  key={index} className={ (!index ? 'active' : '') }>
                     <div className="movie_tile col-xs-6 col-sm-3 placeholder">
                         <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (user.profile_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
                         <div className="row">
@@ -54,7 +54,6 @@ export default class HomePage extends Component {
                           <span className="pull-left text-muted"> {user.popularity ? user.popularity: ''} </span>
                           <span className="pull-right text-muted"> {user.known_for[0].vote_average ? user.known_for[0].vote_average + "%": '0%' } </span>
                         </div>
-
                     </div>
                 </a>
           });
@@ -95,7 +94,7 @@ export default class HomePage extends Component {
                      {tvShowsListElement}
                 </div>
                 <h2 className="page-header">Popular People</h2>
-                <div className={"row placeholders" +  (this.props.peopleFetched ? '': 'inactive')}>
+                <div className={"row placeholders " +  (this.props.peopleFetched ? '': 'inactive')}>
                      {usersListElement}
                 </div>
 

@@ -45,6 +45,32 @@ Following concepts used
 
 #Screenshots
 
+
+
+
+
+
 <h3> Dashboard </h3>
 <p> Dashboard contains Top movies, TV shows and Popular Celebrities </p>
 <img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/Dashboard_movies_tvshows_celbs.png" />
+
+<h3> Detailed Page </h3>
+<pre> Give the Movie/TvShow/Celeb complete Details
+</pre>
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage1.png" />
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage2.png" />
+
+
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage3.png" />
+
+<h3> Movies & TV Shows</h3>
+<pre> Movies tab contains list of following submenus
+  Now Playing
+  CommingSoon.!!
+  Most Popular
+  Top Rated
+</pre>
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/Dashboard_movies_tvshows_celbs.png" />
+
+
+

@@ -75,6 +75,12 @@ Following concepts used
 
 <img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/CelebDetails.png" />
 
+<h3> Seach Page</h3>
+<pre> User Can seach for movies/TV shows/ People
+</pre>
+
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/Search.png" />
+
 <h3> Movies & TV Shows</h3>
 <pre> Movies tab contains list of following submenus
   Now Playing

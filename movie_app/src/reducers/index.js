@@ -10,6 +10,7 @@ import mostPopularTvShowsReducer from './tv/most-popular-tv-shows-reducer'
 import topRatedTvShowsReducer from './tv/top-rated-tv-shows-reducer'
 import airingTodayTvShowsReducer from './tv/airing-today-tv-shows-reducer'
 import movieDetailedPageReducer from './movie/movie-detailed-page-reducer'
+import tvShowDetailedPageReducer from './tv/tv-show-detailed-page-reducer'
 
 export default combineReducers({
   searchReducer,
@@ -22,5 +23,6 @@ export default combineReducers({
   mostPopularTvShowsReducer,
   topRatedTvShowsReducer,
   airingTodayTvShowsReducer,
-  movieDetailedPageReducer
+  movieDetailedPageReducer,
+  tvShowDetailedPageReducer
 })

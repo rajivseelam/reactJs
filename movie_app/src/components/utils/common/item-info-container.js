@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import render from 'react-dom'
 import '../../../stylesheets/common/main'
 
-export default class MovieInfo extends Component{
+export default class ItemDetailsInfo extends Component{
     render(){
         let movieElement = null;
         let crewElement = null;
@@ -11,8 +11,8 @@ export default class MovieInfo extends Component{
         let reviewElement = [];
         let recommendationsElement = [];
 
-        if(this.props.movieCredits){
-          crewElement = this.props.movieCredits.crew.map( (crew) => {
+        if(this.props.itemCredits){
+          crewElement = this.props.itemCredits.crew.map( (crew) => {
               return <div key={crew.job + crew.id} className={ "col-md-4 crew-tile " + (crew.job && crew.job.toLowerCase() == "novel" || crew.job.toLowerCase() == "screenplay" || crew.job.toLowerCase() == "director" ? '': 'inactive') } >
                   <h4> <b>{ crew.name } </b></h4>
                   <h5>{ crew.job ? crew.job: '' }</h5>
@@ -20,8 +20,8 @@ export default class MovieInfo extends Component{
           })
         }
 
-        if(this.props.movieDetails){
-            let item = this.props.movieDetails;
+        if(this.props.itemDetails){
+            let item = this.props.itemDetails;
             movieElement = <div className="row">
                 <div className="col-md-4 main">
                 <img src={(item.poster_path ? "https://image.tmdb.org/t/p/w300_and_h450_bestv2" + item.poster_path: (item.backdrop_path? "https://image.tmdb.org/t/p/w300_and_h450_bestv2" + item.backdrop_path : require('../../../images/no-poster.png')) )} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
@@ -70,8 +70,8 @@ export default class MovieInfo extends Component{
              </div>
         }
 
-        if(this.props.movieCredits){
-          castElement = this.props.movieCredits.cast.map( (cast, index) => {
+        if(this.props.itemCredits){
+          castElement = this.props.itemCredits.cast.map( (cast, index) => {
               if(index >= 6){
                 return false
               }
@@ -83,8 +83,8 @@ export default class MovieInfo extends Component{
           })
         }
 
-        if(this.props.movieReviews.length){
-            reviewElement = this.props.movieReviews.map((review, index) => {
+        if(this.props.itemReviews.length){
+            reviewElement = this.props.itemReviews.map((review, index) => {
                 if(index > 1){
                   return false;
                 }
@@ -95,8 +95,8 @@ export default class MovieInfo extends Component{
                 </div>
             })
         }
-        if(this.props.movieRecommendations.length){
-          recommendationsElement =  this.props.movieRecommendations.map((recommendation) => {
+        if(this.props.itemRecommendations.length){
+          recommendationsElement =  this.props.itemRecommendations.map((recommendation) => {
             var item = recommendation;
 
             return <li key={ "recommendations_" + item.id} className="movie_tile DocumentItem">
@@ -127,14 +127,11 @@ export default class MovieInfo extends Component{
               <div className="container-fluid">
                   <h3>Movie Data</h3>
                   <br/>
-                  <div>
-                      <h3>Facts</h3>
-                      {movieData}
-                  </div>
+                  <div> {movieData}  </div>
               </div>
               <hr/>
 
-              <div className="container-fluid">
+              <div className={ "container-fluid " + this.props.itemReviews && this.props.itemReviews.length ? '' : 'inactive'}>
                   <h3>Reviews</h3>
                   <br/>
                   <div>
@@ -142,7 +139,7 @@ export default class MovieInfo extends Component{
                       {reviewElement}
                   </div>
               </div>
-              <hr/>
+              <hr className={this.props.itemReviews && this.props.itemReviews.length ? '' : 'inactive'}/>
 
               <div className="container-fluid">
                   <h3>Recommendations</h3>

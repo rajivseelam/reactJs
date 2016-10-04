@@ -14,17 +14,20 @@ import MostPopularTvShows from './components/tv/most-popular-tv-shows'
 import TopRatedTvShows from './components/tv/top-rated-tv-shows'
 import AiringTodayTvShows from './components/tv/airing-today-tv-shows'
 import MovieDetailedPage from './components/movie/movie-detailed-page'
+import TvDetailedPage from './components/movie/movie-detailed-page'
 
 export default(
     <Router history={browserHistory}>
         <Route component={MainLayout}>
             <Route path="home">
               <IndexRoute component={HomePage} />
-              <Route path=":id" component={MovieDetailedPage}/>
+              <Route path="movie/:id" component={MovieDetailedPage}/>
+              <Route path="tv/:id" component={TvDetailedPage}/>
             </Route>
             <Route path="now-playing">
                 <IndexRoute component={NowPlaying} />
-                <Route path=":id" component={MovieDetailedPage}/>
+                <Route path="movie/:id" component={MovieDetailedPage}/>
+                <Route path="tv/:id" component={TvDetailedPage}/>
             </Route>
             <Route path="upcoming-movies">
                   <IndexRoute component={UpcomingMovies} />

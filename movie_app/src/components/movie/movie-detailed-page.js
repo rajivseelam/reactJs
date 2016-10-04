@@ -36,7 +36,7 @@ export default class MovieDetailedPage extends Component{
 
         return(
             <div className="container">
-              <h1> Movie Detailed Page </h1>
+              <h1>Movie Detailed Page </h1>
                 {movieInfo}
             </div>
         )

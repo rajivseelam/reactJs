@@ -32,7 +32,7 @@ export default class Header extends Component{
         var listElement = [];
         if(this.props.searchItems.length > 0){
            listElement = this.props.searchItems.map( (item, index) => {
-             return <a href={'/home/' + item.media_type + '/' + item.id } className={ "list-group-item list-group-item-action " + (!index ? 'active' : '') }>
+             return <a href={'/home/' + (item.media_type != "person" ? item.media_type : 'celebs' ) + '/' + item.id } className={ "list-group-item list-group-item-action " + (!index ? 'active' : '') }>
                 <div className="row">
                     <div className="col-md-2">
                         <img src={  (item.poster_path ? "https://image.tmdb.org/t/p/w45_and_h67_bestv2" + item.poster_path : require('../../images/poster_placeholder.png')) } alt="" />

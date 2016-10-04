@@ -63,6 +63,8 @@ Following concepts used
 
 <img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage3.png" />
 
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage4.png" />
+
 
 <h3> People Detailed Page </h3>
 <pre> Give the Celebrity complete Details

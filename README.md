@@ -34,7 +34,14 @@ npm start
 
 Many React guides use ES6, so getting familiar with it will also help you learn React. Also note that the a common way to use Babel is to put it's list of desired "presets" in a .babelrc file. This is the strategy that we're using and this file is already created for you.</p>
 
-
+#State Management
+Following concepts used
+<h3> react-redux </h3>
+<h3> store </h3>
+<h3> combined reducers </h3>
+<h3> middleware </h3>
+<h3> promise </h3>
+<h3> logger </h3>
 
 
 <img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/CelebDetailPage.png" />

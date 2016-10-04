@@ -24,11 +24,15 @@ export default class Header extends Component{
         this.props.dispatch(startFetchingSearchItems());
     }
 
+    handleDetailePage(id, mediaType){
+      return location.pathname + "/" + mediaType + "/" + id;
+    }
+
     render(){
         var listElement = [];
         if(this.props.searchItems.length > 0){
            listElement = this.props.searchItems.map( (item, index) => {
-             return <a href="#" className={ "list-group-item list-group-item-action " + (!index ? 'active' : '') }>
+             return <a href={'/home/' + item.media_type + '/' + item.id } className={ "list-group-item list-group-item-action " + (!index ? 'active' : '') }>
                 <div className="row">
                     <div className="col-md-2">
                         <img src={  (item.poster_path ? "https://image.tmdb.org/t/p/w45_and_h67_bestv2" + item.poster_path : require('../../images/poster_placeholder.png')) } alt="" />
@@ -60,7 +64,7 @@ export default class Header extends Component{
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                       <form className="navbar-form navbar-right">
-                          <input type="text" className="form-control" placeholder="Search for movies/tv shows..." onChange={this.handleSeach.bind(this)} onBlur={this.clearSearch.bind(this)}/>
+                          <input type="text" className="form-control" placeholder="Search for movies/tv shows..." onChange={this.handleSeach.bind(this)} onFocus={this.clearSearch.bind(this)}/>
                           <div className={"list-group " + (this.props.fetched ? '': 'inactive')}>
                              {listElement}
                           </div>

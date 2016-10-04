@@ -18,7 +18,7 @@ export default class TvShowsOnTv extends Component{
     render(){
         var onTvShowsElement = []
         if(this.props.nowPlayingTvShows.length){
-            onTvShowsElement = <ItemListContainer displayLength='all' items={this.props.nowPlayingTvShows} />
+            onTvShowsElement = <ItemListContainer urlPrefix='/tv-shows-on-tv/' mediaType='tv' displayLength='all' items={this.props.nowPlayingTvShows} />
         }
 
         return(

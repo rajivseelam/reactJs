@@ -31,28 +31,37 @@ export default(
             </Route>
             <Route path="upcoming-movies">
                   <IndexRoute component={UpcomingMovies} />
+                  <Route path="movie/:id" component={MovieDetailedPage}/>
             </Route>
             <Route path="most-popular-movies">
                   <IndexRoute component={MostPopularMovies} />
+                  <Route path="movie/:id" component={MovieDetailedPage}/>
             </Route>
             <Route path="top-rated-movies">
                   <IndexRoute component={TopRatedMovies} />
+                  <Route path="movie/:id" component={MovieDetailedPage}/>
             </Route>
             <Route path="tv-shows-on-tv">
                   <IndexRoute component={TvShowsOnTv} />
+                    <Route path="tv/:id" component={TvShowDetailedPage}/>
             </Route>
             <Route path="most-popular-tv-shows">
                   <IndexRoute component={MostPopularTvShows} />
+                    <Route path="tv/:id" component={TvShowDetailedPage}/>
             </Route>
             <Route path="top-rated-tv-shows">
                   <IndexRoute component={TopRatedTvShows} />
+                    <Route path="tv/:id" component={TvShowDetailedPage}/>
             </Route>
             <Route path="airing-today-tv-shows">
                   <IndexRoute component={AiringTodayTvShows} />
+                    <Route path="tv/:id" component={TvShowDetailedPage}/>
             </Route>
             <Route path="most-popular-celebs">
-                  <IndexRoute component={MostPopularCelebs} />
+                <IndexRoute component={MostPopularCelebs} />
+                <Route path="celebs/:id" component={celebsDetailedPage}/>
             </Route>
+
           </Route>
     </Router>
 )

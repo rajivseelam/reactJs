@@ -20,7 +20,7 @@ export default class MostPopularCelebs extends Component{
         var usersListElement = [];
         if(this.props.userList.length > 0){
           usersListElement = this.props.userList.map( (user, index) => {
-                return <a href="#" key={index} className={ (!index ? 'active' : '') }>
+                return <a href={"/most-popular-celebs/celebs/" + user.id} key={index} className={ (!index ? 'active' : '') }>
                     <div className="movie_tile col-xs-6 col-sm-3 placeholder">
                         <img src={"https://image.tmdb.org/t/p/w235_and_h235_bestv2" + (user.profile_path)} width="100%" height="100%" className="img-responsive" alt="Generic placeholder thumbnail" />
                         <div className="row">

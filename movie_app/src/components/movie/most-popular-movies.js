@@ -18,7 +18,7 @@ export default class MostPopularMovies extends Component{
     render(){
         var mostPopularMoviesElement = [];
         if(this.props.mostPopularMovies.length){
-          mostPopularMoviesElement = <ItemListContainer displayLength='all' items={this.props.mostPopularMovies} />
+          mostPopularMoviesElement = <ItemListContainer urlPrefix='/most-popular-movies/' mediaType='movie' displayLength='all' items={this.props.mostPopularMovies} />
         }
         return(
           <div className="container">

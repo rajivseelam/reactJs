@@ -18,7 +18,7 @@ export default class AiringTodayTvShows extends Component{
     render(){
         var airingTodayTvShowsElement = [];
         if(this.props.airingTodayTvShows.length){
-            airingTodayTvShowsElement = <ItemListContainer displayLength='all' items={this.props.airingTodayTvShows} />
+            airingTodayTvShowsElement = <ItemListContainer urlPrefix='/airing-today-tv-shows/' mediaType='tv' displayLength='all' items={this.props.airingTodayTvShows} />
         }
         return(
           <div className="container">

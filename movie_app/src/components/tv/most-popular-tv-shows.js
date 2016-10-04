@@ -19,7 +19,7 @@ export default class MostPopularTvShows extends Component{
     render(){
         var mostPopularTvShowsElement = []
         if(this.props.mostPopularTvShows.length){
-            mostPopularTvShowsElement = <ItemListContainer displayLength='all' items={this.props.mostPopularTvShows} />
+            mostPopularTvShowsElement = <ItemListContainer urlPrefix='/most-popular-tv-shows/' mediaType='tv' displayLength='all' items={this.props.mostPopularTvShows} />
         }
         return(
           <div className="container">

@@ -17,7 +17,7 @@ export default class TopRatedMovies extends Component{
     render(){
         var topRatedMoviesElement = [];
         if(this.props.topRatedMovies.length){
-            topRatedMoviesElement = <ItemListContainer displayLength='all' items={this.props.topRatedMovies} />
+            topRatedMoviesElement = <ItemListContainer urlPrefix='/top-rated-movies/' mediaType='movie' displayLength='all' items={this.props.topRatedMovies} />
         }
         return(
           <div className="container">

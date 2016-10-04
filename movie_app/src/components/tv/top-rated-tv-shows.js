@@ -18,7 +18,7 @@ export default class TopRatedTvShows extends Component{
     render(){
         var topRatedTvShowsElement = [];
         if(this.props.topRatedTvShows.length){
-            topRatedTvShowsElement = <ItemListContainer displayLength='all' items={this.props.topRatedTvShows} />
+            topRatedTvShowsElement = <ItemListContainer urlPrefix='/top-rated-tv-shows/' mediaType='tv' displayLength='all' items={this.props.topRatedTvShows} />
         }
         return(
           <div className="container">

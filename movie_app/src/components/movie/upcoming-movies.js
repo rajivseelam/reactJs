@@ -21,7 +21,7 @@ export default class UpcomingMovies extends Component{
         var upcomingMoviesElement = [];
         var minimum = null;
         if(this.props.upcomingMovies.length){
-          upcomingMoviesElement = <ItemListContainer displayLength='all' items={this.props.upcomingMovies} />
+          upcomingMoviesElement = <ItemListContainer urlPrefix='/upcoming-movies/' mediaType='movie' displayLength='all' items={this.props.upcomingMovies} />
           minimum = this.props.dates.minimum
         }
         return(

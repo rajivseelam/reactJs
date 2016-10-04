@@ -52,16 +52,26 @@ Following concepts used
 
 <h3> Dashboard </h3>
 <p> Dashboard contains Top movies, TV shows and Popular Celebrities </p>
-<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/Dashboard_movies_tvshows_celbs.png" />
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/Dashboard_movies_tvshows_celbs.png" />
 
 <h3> Detailed Page </h3>
-<pre> Give the Movie/TvShow/Celeb complete Details
+<pre> Give the Movie/TvShow complete Details
 </pre>
 <img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage1.png" />
 <img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage2.png" />
 
 
 <img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/DetailedPage3.png" />
+
+
+<h3> People Detailed Page </h3>
+<pre> Give the Celebrity complete Details
+</pre>
+ 
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/CelebDetailPage.png" />
+
+
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/CelebDetails.png" />
 
 <h3> Movies & TV Shows</h3>
 <pre> Movies tab contains list of following submenus
@@ -70,7 +80,7 @@ Following concepts used
   Most Popular
   Top Rated
 </pre>
-<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/Dashboard_movies_tvshows_celbs.png" />
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/coming-soon.png" />
 
 
 

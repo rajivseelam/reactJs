@@ -43,5 +43,8 @@ Following concepts used
 <h3> promise </h3>
 <h3> logger </h3>
 
+#Screenshots
 
-<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/CelebDetailPage.png" />
+<h3> Dashboard </h3>
+<p> Dashboard contains Top movies, TV shows and Popular Celebrities </p>
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/Dashboard.png" />

@@ -80,7 +80,7 @@ Following concepts used
   Most Popular
   Top Rated
 </pre>
-<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/coming-soon.png" />
+<img src="https://raw.githubusercontent.com/venkateshvangala/reactJs/master/movie_app/src/images/screenshots/coming-soon.png" />
 
 
 
